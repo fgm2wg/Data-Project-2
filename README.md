@@ -40,5 +40,5 @@ else:
 * To install all required dependencies, simply create a new venv and run `pip install -r requirements.txt`.
 * You will also need to setup a .env file and add a `SECRET_KEY` variable with a strong secret key for the app to work
 * To run the app, simply execute `python app.py`.
-* Additionally, you can individually execute `python etl.py` which will generate the historical weather data csv up to today's date from the OpenMeteo historical API source. However, app.py already handles creating this csv file and calling ETL functions from etl.py to update the csv if its out of date.
+* Additionally, you can individually execute `python etl.py` which will generate the historical weather data csv up to today's date from the OpenMeteo Historical Weather API source. However, app.py already handles creating this csv file and calling ETL functions from etl.py to update the csv if its out of date.
 * The 2-page reflection paper is also included within this repository named `reflection.pdf`

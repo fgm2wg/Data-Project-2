@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block title %}Chat{% endblock %} {% block content
+%}
+<section class="chat-section">
+  <h2>Chat with WeatherBot</h2>
+
+  <div class="chat-controls">
+    <button
+      onclick="location.href='{{ url_for('clear') }}'"
+      class="btn btn-secondary"
+    >
+      🧹 Clear Chat
+    </button>
+  </div>
+
+  <div class="chat-container" id="chat">
+    {% for msg in history %}
+    <div class="bubble user"><strong>You:</strong> {{ msg.user }}</div>
+    <div class="bubble bot"><strong>Bot:</strong> {{ msg.bot }}</div>
+    {% endfor %}
+  </div>
+
+  <form
+    action="{{ url_for('chat') }}"
+    method="post"
+    class="chat-form"
+    onsubmit="scrollDown()"
+  >
+    <input
+      type="text"
+      name="message"
+      placeholder="Ask something…"
+      autocomplete="off"
+      required
+    />
+    <button type="submit" class="btn btn-primary">Send</button>
+  </form>
+</section>
+
+<script>
+  function scrollDown() {
+    setTimeout(() => {
+      const c = document.getElementById("chat");
+      c.scrollTop = c.scrollHeight;
+    }, 50);
+  }
+  window.onload = scrollDown;
+</script>
+{% endblock %}

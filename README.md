@@ -5,6 +5,7 @@
 * This will take you to the homepage (http://35.193.202.40:5000/), to access the chat go to `http://35.193.202.40:5000/chat` or click the 'Start Chatting' button on the homepage
 * To chat with the bot, simply type in your message and hit Enter or click the 'Send' button. Then, the bot will return a response to your message.
 * The bot is only capable of outputting high and low temperature for the requested date. Additionally, the data for past dates only goes back until 01/01/2022 in the historical weather data csv, so requests beyond that date cannot be fetched. For future dates, data is only available up to 16 days ahead from the OpenMeteo Forecast API, so requests beyond that range cannot be fetched.
+* The static csv is generated from data from OpenMeteo Historical Weather API. If the date requested is not in this file, then it try to call the OpenMeteo Forecast API to attempt getting forecast for future date.
 * Some examples of messages that the bot will accept include: 'today', 'yesterday', 'tomorrow', 'next <day>', 'last <day>', 'this <day>', 'was <day>', 'MM/DD/YYYY', or 'YYYY-MM-DD'.
 * Here is a non-comprehensive list of some realistic messages that it would accept:
   * “What’s the weather today?”
